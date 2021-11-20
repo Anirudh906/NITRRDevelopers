@@ -31,7 +31,7 @@ router.post('/', [
          const avatar = gravatar.url(email, {
              s: '200', 
              r: 'pg',
-             d: 'mm'
+             d: 'robohash'
          });
 
         const salt = await bcrypt.genSalt(10);

@@ -13,6 +13,10 @@
   "author": "Anirudha S.",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/material": "^5.0.6",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -23,10 +27,12 @@
     "express-validator": "^6.13.0",
     "gravatar": "^1.8.2",
     "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
     "mongoose": "^6.0.7",
     "motivater": "^1.0.6",
     "nodemon": "^2.0.13",
     "quoter": "^0.1.0",
+    "react-avatar": "^3.10.0",
     "request": "^2.88.2"
   }
 }

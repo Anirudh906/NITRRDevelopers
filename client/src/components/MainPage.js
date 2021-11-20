@@ -1,15 +1,21 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import walkingCode from './images/bongo-cat-code.png';
-
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
  
 
- const MainPage = () => {
-    return (
+ const MainPage = (props) => {
+    
+  if(props.isAuthenticated){
+           return <Redirect to = '/dashboard'/>
+  }
+  
+  return (
       <section className="landing">
         <div>
           <div className="landing-inner">
-            <img alt= "main" src= {walkingCode} style={{height: '150px', width:'250px'}} />
+            <img alt= "main" src= {walkingCode} style={{height: '175px', width:'275px'}} />
 
 
            
@@ -30,4 +36,12 @@ import walkingCode from './images/bongo-cat-code.png';
       </section>
     );
 }
-export default MainPage;
+MainPage.propTypes = {
+  isAuthenticated: PropTypes.bool
+}
+
+const map = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(map)(MainPage);

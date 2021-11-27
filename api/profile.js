@@ -31,7 +31,7 @@ router.get("/me", auth, async (req, res) => {
 //@desc Create or update user profile
 //@access Private
 
-router.post("/", [auth, check('skills', 'Skills is required').not().isEmpty()], async (req, res) => {
+router.post("/", [auth, check('status', 'Status is required').not().isEmpty(), check('skills', 'Skills is required').not().isEmpty()], async (req, res) => {
    const errors = validationResult(req);
    if(!errors.isEmpty()){
      return res.status(400).json({ errors: errors.array() });
@@ -168,7 +168,7 @@ router.delete('/', auth,  async (req, res) => {
 //@desc Add profile experience
 //@access Private
 
-router.post('/experience', [ auth, [
+router.put('/experience', [ auth, [
    check('title', 'Title is required').not().isEmpty(),
    check('company', 'Company is required').not().isEmpty(),
    check('from', 'From Date is required').not().isEmpty()  

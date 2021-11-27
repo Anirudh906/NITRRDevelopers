@@ -39,7 +39,7 @@ import cat from '../images/catLogin.jpg';
             marginRight: "50px",
           }}
         >
-          <img src={cat} style={{ height: "375px", width: "375px" }} />
+          <img src={cat} style={{ height: "375px", width: "375px" }} alt="cat"/>
         </div>
         <div style={{ display: "inline-block", marginLeft: "150px" }}>
           <h1 className="large text-primary" style={{ textAlign: "right" }}>
@@ -54,6 +54,7 @@ import cat from '../images/catLogin.jpg';
                 name="email"
                 value={email}
                 onChange={Change}
+                style={{ width: "100%" }}
               />
             </div>
             <div className="form-group">
@@ -63,6 +64,7 @@ import cat from '../images/catLogin.jpg';
                 name="password"
                 value={password}
                 onChange={Change}
+                style={{ width: "100%" }}
               />
             </div>
 
@@ -74,7 +76,7 @@ import cat from '../images/catLogin.jpg';
             />
           </form>
           <p
-            style={{ position: "relative", fontSize:"15px", top: "20px" }}
+            style={{ position: "relative", fontSize: "15px", top: "20px" }}
             className="my-1"
           >
             Don't have an account? <Link to="/register">Sign Up</Link>

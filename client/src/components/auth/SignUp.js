@@ -50,6 +50,7 @@ const SignUp = (props) => {
                 name="name"
                 value={name}
                 onChange={Change}
+                style={{ width: "100%" }}
               />
             </div>
             <div className="form-group">
@@ -59,6 +60,7 @@ const SignUp = (props) => {
                 name="email"
                 value={email}
                 onChange={Change}
+                style={{ width: "100%" }}
               />
               {/* <small className="form-text">
                 This site uses Gravatar so if you want a profile image, use a
@@ -72,6 +74,7 @@ const SignUp = (props) => {
                 name="password"
                 value={password}
                 onChange={Change}
+                style={{ width: "100%" }}
                 //minLength="6"
               />
             </div>
@@ -82,6 +85,7 @@ const SignUp = (props) => {
                 name="password2"
                 value={password2}
                 onChange={Change}
+                style={{ width: "100%" }}
                 // minLength="6"
               />
             </div>
@@ -93,7 +97,7 @@ const SignUp = (props) => {
             />
           </form>
           <p
-            style={{ position: "relative", top: "20px", fontSize:"15px" }}
+            style={{ position: "relative", top: "20px", fontSize: "15px" }}
             className="my-1"
           >
             Already have an account? <Link to="/login">Sign In</Link>
@@ -110,7 +114,7 @@ const SignUp = (props) => {
             height: "375px",
           }}
         >
-          <img src={cat} />
+          <img src={cat} alt = "cat"/>
         </div>
       </Fragment>
     );

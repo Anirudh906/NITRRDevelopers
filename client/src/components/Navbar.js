@@ -4,14 +4,21 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import { logout } from '../actions/auth';
 import LogoutTwoToneIcon from "@mui/icons-material/LogoutTwoTone";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+// import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Avatar } from "@mui/material";
-import Avatar2 from 'react-avatar'; 
-var md5 = require('md5');
-const hash = "";
+// import Avatar2 from 'react-avatar'; 
+// var md5 = require('md5');
+// const hash = "";
 const Navbar = (props) => {
     const authLinks = (
       <ul>
+      <li>
+        <Link style={{
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+            }} to = "/profiles">Developers</Link>
+       </li>
         <li>
           <Avatar
             src={
@@ -23,7 +30,6 @@ const Navbar = (props) => {
           />
         </li>
         <li>
-          
           <Link
             to="/dashboard"
             style={{
@@ -33,13 +39,16 @@ const Navbar = (props) => {
             }}
           >
             {/* <AccountCircleIcon style={{ marginRight: ".2rem" }} /> */}
-            Dashboard
+            {props.auth.isAuthenticated &&
+              !props.auth.loading &&
+              props.auth.user &&
+              props.auth.user.name}
           </Link>
         </li>
         <li>
           <a
             onClick={props.logout}
-            href='#!'
+            href=""
             style={{
               display: "flex",
               alignItems: "center",
@@ -68,7 +77,7 @@ const Navbar = (props) => {
   const guestLinks = (
          <ul>
             <li>
-              <Link to = "/">Developers</Link>
+              <Link to = "/profiles">Developers</Link>
             </li>
             <li>
               <Link to = "/register">Register</Link>

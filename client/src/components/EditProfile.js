@@ -1,10 +1,10 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link, withRouter }from 'react-router-dom';
 import { connect } from 'react-redux'
-import { createProfile } from '../actions/profile';
+import { createProfile, currentProfile } from '../actions/profile';
 
-const CreateProfile = props => {
+const EditProfile = props => {
     const [formData, setFormData] = useState({
         branch:'',
         website:'',
@@ -24,6 +24,26 @@ const CreateProfile = props => {
 
     });
       const [displaySocial, toggleSocial] = useState(false);
+      useEffect(() => {
+           props.currentProfile();
+
+           setFormData({
+               branch: props.profile.loading || !props.profile.profile.branch ? '' : props.profile.profile.branch,
+                website: props.profile.loading || !props.profile.profile.website ? '' : props.profile.profile.website,
+                location: props.profile.loading || !props.profile.profile.location ? '' : props.profile.profile.location,
+                status: props.profile.loading || !props.profile.profile.status ? '' : props.profile.profile.status,
+                skills: props.profile.loading || !props.profile.profile.skills ? '' : props.profile.profile.skills.join(','),
+                CodeforcesHandle: props.profile.loading || !props.profile.profile.CodeforcesHandle ? '' : props.profile.profile.CodeforcesHandle,
+                CodechefHandle: props.profile.loading || !props.profile.profile.CodechefHandle ? '' : props.profile.profile.CodechefHandle,
+                LeetcodeHandle: props.profile.loading || !props.profile.profile.LeetcodeHandle ? '' : props.profile.profile.LeetcodeHandle,
+                bio: props.profile.loading || !props.profile.profile.bio ? '' : props.profile.profile.bio,
+                githubusername: props.profile.loading || !props.profile.profile.githubusername ? '' : props.profile.profile.githubusername,
+                twitter: props.profile.loading || !props.profile.profile.social ? '' : props.profile.profile.social.twitter,
+                linkedin: props.profile.loading || !props.profile.profile.social ? '' : props.profile.profile.social.linkedin,
+                facebook: props.profile.loading || !props.profile.profile.social ? '' : props.profile.profile.social.facebook,
+                instagram: props.profile.loading || !props.profile.profile.social ? '' : props.profile.profile.social.instagram
+       });
+      }, [props.profile.loading]);
     const {
         branch,
         website,
@@ -44,13 +64,13 @@ const CreateProfile = props => {
    
   const onSubmit = e => {
     e.preventDefault();
-    props.createProfile(formData, props.history);
+    props.createProfile(formData, props.history, true);
 
   }
     return (
       <Fragment>
         <div style={{ textAlign: "center" }}>
-          <span style={{ fontSize: "30px" }}>🪄 </span>
+          <span style={{ fontSize: "30px" }}>📝 </span>
           <h1
             className="large text-primary"
             style={{
@@ -60,11 +80,11 @@ const CreateProfile = props => {
               margin: "20px auto",
             }}
           >
-            Create Your Profile
+            Edit Your Profile
           </h1>
         </div>
         <p className="lead" style={{ textAlign: "center" }}>
-          Fill in information to make your profile.
+           Edit your information to make your profile.
         </p>
         <small style={{ position: "relative", left: "30%" }}>
           * = required field
@@ -78,12 +98,12 @@ const CreateProfile = props => {
           <div className="input-group input-group-icon">
             <div>
               <select name="status" value={status} onChange={(e) => Change(e)}>
-                <option value="0"> * Select Professional Status</option>
+                <option> * Select Professional Status</option>
                 <option value="Student or Learning">Student or Learning</option>
                 <option value="Developer">Developer</option>
                 <option value="Junior Developer">Junior Developer</option>
                 <option value="Senior Developer">Senior Developer</option>
-                <option value="Instructor">Instructor or Teacher</option>
+                <option value="Instructor or Teacher">Instructor or Teacher</option>
                 <option value="Intern">Intern</option>
                 <option value="Other">Other</option>
               </select>
@@ -327,7 +347,12 @@ const CreateProfile = props => {
     );
 }
 
-CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired
+EditProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+  currentProfile: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired
 }
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+const map = state => ({
+    profile: state.profile
+})
+export default connect(map, { createProfile,currentProfile })(withRouter(EditProfile));

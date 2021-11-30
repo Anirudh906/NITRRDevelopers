@@ -6,7 +6,7 @@ import Loader from './Loader';
 import { getProfileByID } from '../actions/profile';
 import Moment from 'react-moment';
 import ProfileGithub from './ProfileGithub.js';
-
+import NotFound from './NotFound';
 
 const ProfileDashboard = props => {
     useEffect(() => {
@@ -16,7 +16,10 @@ const ProfileDashboard = props => {
     
     return (
         <Fragment>
-            { props.profile.profile === null || props.profile.loading ? <Loader /> : <Fragment>
+         {(props.profile.profile === null) ? (<Fragment>
+           <NotFound />
+         </Fragment>): 
+             props.profile.loading ? <Loader /> : <Fragment>
               
                <Link to ='/profiles' className = 'btn btn-3'>Back</Link>
                {props.auth.isAuthenticated && !props.auth.loading && props.auth.user._id === props.profile.profile.user._id && (<Link to = '/edit-profile' className = 'btn btn-3'> Edit Your Profile</Link>)}
@@ -121,7 +124,7 @@ const ProfileDashboard = props => {
                           ></i>
                           
                         </a>)
-        }         
+         }
                       
                          
                          
@@ -164,6 +167,7 @@ const ProfileDashboard = props => {
       )}
     
             </Fragment>}
+               
         </Fragment>
     )
 }

@@ -19,6 +19,13 @@ const Navbar = (props) => {
               flexWrap: "wrap",
             }} to = "/profiles">Developers</Link>
        </li>
+       <li>
+        <Link style={{
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+            }} to = "/posts">Posts</Link>
+       </li>
         <li>
           <Avatar
             src={

@@ -227,6 +227,7 @@ img {
   background: #fff;
   color: #333;
   border: #ccc solid 1px;
+ border-radius: 15px;
 }
 
 .btn:hover {
@@ -240,6 +241,7 @@ img {
 
 .round-img {
   border-radius: 50%;
+ 
 }
 
 .line {
@@ -283,6 +285,18 @@ textarea {
   border-radius: 10px;
    font-family: 'Poppins',
    sans-serif;
+}
+
+.formPost textarea{
+  display: block;
+  width: 60%;
+  padding: 0.4rem;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  font-family: 'Poppins',
+  sans-serif;
+  padding: 10px 20px;
 }
 
 .form input[type='submit'],
@@ -497,18 +511,51 @@ button {
 }
 
 .post {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-gap: 2rem;
-  align-items: center;
+  display: inline-block;
+  /* grid-template-columns: 1fr 4fr;
+  grid-gap: 2rem; */
+  /* align-items: center; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 20px;
+  width: 100%;
+}
+.postc{
+  display: inline-block;
+  /* grid-template-columns: 1fr 4fr;
+  grid-gap: 2rem; */
+  /* align-items: center; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 70%;
+}
+.postc img {
+  width: 50px;
+  float: left;
+  margin-right: 20px;
+}
+.postc .post-date {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
+
+/* 
 .post>div:first-child {
   text-align: center;
-}
+} */
 
 .post img {
-  width: 100px;
+  width: 50px;
+  float: left;
+  margin-right:20px;
 }
 
 .post .comment-count {
@@ -658,6 +705,28 @@ button {
   background-color: transparent;
   box-shadow: 10px 20px 30px 5px rgba(160, 158, 158, 0.7);
 }
+
+
+.btnc {
+  padding: 7px 20px;
+  margin: 20px;
+  font-size: 15px;
+  font-weight: 900;
+  color: #fff;
+  background-color: rgb(247, 106, 40);
+  border: 2px solid rgb(247, 106, 40);
+  cursor: pointer;
+  width: max-content;
+  transition: 0.25s ease;
+  border-radius: 12px;
+}
+
+.btnc-3:hover {
+  color: rgb(247, 106, 40);
+  background-color: transparent;
+  box-shadow: 10px 20px 30px 5px rgba(160, 158, 158, 0.7);
+}
+
 
 
 .btnexp {
@@ -1559,4 +1628,31 @@ HTML:
 
 .double-val-label>span.danger {
   background-color: #d9534f;
+}
+
+
+.post-button-like {
+  background-color: transparent;
+  border-style: none;
+}
+
+.post-button-like :hover{
+  color: green;
+  transition: all 0.5s;
+}
+
+.post-button-unlike {
+  background-color: transparent;
+  border-style: none;
+}
+
+.post-button-unlike :hover {
+  color: rgb(228, 7, 7);
+  transition: all 0.5s;
+}
+
+.delete-post-button {
+  background-color: transparent;
+  border-style: none;
+  color: red;
 }

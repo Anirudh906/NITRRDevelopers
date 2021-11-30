@@ -19,8 +19,7 @@ import cat from '../images/catLogin.jpg';
     };
     const Submit = (e) => {
       e.preventDefault();
-      console.log(email);
-      console.log(password);
+      
       props.login({ email, password });
       
     };

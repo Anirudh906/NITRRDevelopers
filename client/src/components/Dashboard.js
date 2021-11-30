@@ -61,6 +61,10 @@ const Dashboard = props => {
                 Create one
               </Link>
             </div>
+            
+            <div style={{ textAlign: "center" , margin:'50px 0'}}>
+              <button className= 'btndelacc btndelacc-3' onClick={() => props.deleteAccount()}>Delete Account</button>
+            </div>
           </Fragment>
         )}
       </Fragment>

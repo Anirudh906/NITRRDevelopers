@@ -34,7 +34,7 @@ const ProfileDashboard = props => {
    
        {props.profile.profile.social && props.profile.profile.social.instagram && (
               <a
-                          rel="noopener noreferrer"
+                          
                           target="_blank"
                           href={props.profile.profile.social.instagram}
                           className="icon"

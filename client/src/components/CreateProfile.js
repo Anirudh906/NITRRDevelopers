@@ -83,7 +83,7 @@ const CreateProfile = props => {
                 <option value="Developer">Developer</option>
                 <option value="Junior Developer">Junior Developer</option>
                 <option value="Senior Developer">Senior Developer</option>
-                <option value="Instructor">Instructor or Teacher</option>
+                <option value="Instructor or Teacher">Instructor or Teacher</option>
                 <option value="Intern">Intern</option>
                 <option value="Other">Other</option>
               </select>

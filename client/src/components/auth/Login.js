@@ -31,17 +31,12 @@ import cat from '../images/catLogin.jpg';
     return (
       <Fragment>
         <div
-          style={{
-            position: "relative",
-            opacity: "0.7",
-            display: "inline-block",
-            marginRight: "50px",
-          }}
+          className="login-cat"
         >
-          <img src={cat} style={{ height: "375px", width: "375px" }} alt="cat"/>
+          <img src={cat} alt="cat"/>
         </div>
-        <div style={{ display: "inline-block", marginLeft: "150px" }}>
-          <h1 className="large text-primary" style={{ textAlign: "right" }}>
+        <div className="login-container">
+          <h1 className="large text-primary signin" >
             Sign In
           </h1>
           <p className="lead">Sign in your Account</p>
@@ -69,8 +64,8 @@ import cat from '../images/catLogin.jpg';
 
             <input
               type="submit"
-              className="btn btn-3"
-              style={{ position: "relative", left: "130px", top: "20px" }}
+              className="btn btn-3 signin-button"
+            
               value="Login"
             />
           </form>

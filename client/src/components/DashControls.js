@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
  const DashControls = () => {
     return (
-      <div style={{ textAlign: "center" }}>
+      <div className="dashbutton" style={{ textAlign: "center" }}>
         <Link to="/edit-profile" className="btno btno-3">
           Edit Profile
         </Link>

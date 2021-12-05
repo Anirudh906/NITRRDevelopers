@@ -6,6 +6,7 @@ import { currentProfile, deleteAccount } from '../actions/profile';
 import DashControls from './DashControls';
 import Experience from './Experience';
 import Loader from './Loader';
+import hackercat from './images/hackercat.png';
 const Dashboard = props => {
    
    useEffect(() => {
@@ -16,7 +17,10 @@ const Dashboard = props => {
       <Loader />
     ) : (
       <Fragment>
-        
+       
+       <div className="card-containerdash">
+          
+
         <div style={{ textAlign: "center" }}>
           <span style={{ fontSize: "30px" }}>🔮 </span>
           <h1
@@ -33,16 +37,19 @@ const Dashboard = props => {
            <span style={{ fontSize: "30px" }}> 🔮</span>
         </div>
         <p className="lead" style={{ textAlign: "center" }}>
-          Welcome 🐱‍💻 {props.auth.user && props.auth.user.name}
+          Welcome <img className = "hackercat" src = {hackercat}/> {props.auth.user && props.auth.user.name}
         </p>
+       {props.profile.profile !== null ? (
+         <DashControls />
+       ): <Fragment></Fragment>
+       }
+       </div>
         {props.profile.profile !== null ? (
           <Fragment>
-            <DashControls />
+           
             <Experience experience = {props.profile.profile.experience}/>
 
-            <div style={{ textAlign: "center" , margin:'50px 0'}}>
-              <button className= 'btndelacc btndelacc-3' onClick={() => props.deleteAccount()}>Delete Account</button>
-            </div>
+          
           </Fragment>
         ) : (
           <Fragment>
@@ -62,11 +69,13 @@ const Dashboard = props => {
               </Link>
             </div>
             
+          </Fragment>
+      
+        )}
+        
             <div style={{ textAlign: "center" , margin:'50px 0'}}>
               <button className= 'btndelacc btndelacc-3' onClick={() => props.deleteAccount()}>Delete Account</button>
             </div>
-          </Fragment>
-        )}
       </Fragment>
     );
 };

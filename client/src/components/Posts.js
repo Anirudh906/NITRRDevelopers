@@ -14,7 +14,7 @@ const Posts = props => {
         <Fragment>
 
            <div style={{ textAlign: "center" }}>
-          <span style={{ fontSize: "30px" }}>📬  </span>
+          <span style={{ fontSize: "30px" }}>📬</span>
           <h1
             className="large text-primary"
             style={{
@@ -24,7 +24,7 @@ const Posts = props => {
               margin: "20px auto",
             }}
           >
-             &nbsp;Posts
+             Posts
           </h1>
          
         </div>

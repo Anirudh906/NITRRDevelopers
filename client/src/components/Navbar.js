@@ -63,7 +63,7 @@ const Navbar = (props) => {
             }}
           >
             {" "}
-            <LogoutTwoToneIcon style={{ marginRight: ".2rem" }} />
+            <LogoutTwoToneIcon className="logout-icon" style={{ marginRight: ".2rem" }} />
             Logout{" "}
           </a>
         </li>

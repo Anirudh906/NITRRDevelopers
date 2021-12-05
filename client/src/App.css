@@ -1311,6 +1311,25 @@ input:focus+.input-icon:after {
   background-size: cover;
 }
 
+.card-containerdash {
+  background-color: #ffe694;
+  border-radius: 25px;
+
+  color: #f53100;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  position: relative;
+  width: 850px;
+  max-width: 100%;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  margin: 25px auto;
+  transition: all 0.5s;
+  background-image: url('./components/images/code99.jpg');
+
+  background-size: cover;
+}
+
 .about-container{
   border-radius: 25px;
  position: relative;
@@ -1656,3 +1675,160 @@ HTML:
   border-style: none;
   color: red;
 }
+
+
+
+
+
+@media only screen and (max-width: 375px) {
+  .btn{
+       margin-top: 10px;
+       margin-bottom: 10px;
+  }
+}
+
+.hackercat{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 5px;
+}
+.login-cat {
+    position: relative;
+    opacity: 0.7;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.login-container{
+  display: inline-block;
+  margin-left: 150px;
+}
+
+.signin{
+  text-align: right;
+}
+.login-cat img {
+  height: 375px;
+  width: 375px;
+}
+.signin-button{
+  position: relative;
+  left: 130px;
+  top: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+
+
+  .login-cat{
+    text-align: center;
+    display: block;
+  }
+
+   .login-cat img {
+     height: 275px;
+     width: 275px;
+   }
+  .login-container {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+
+  }
+  .signin{
+    text-align: center;
+  }
+
+  .signin-button{
+    position: relative;
+    left: 0;
+    top: 20px;
+  }
+}
+
+
+@media only screen and (max-width: 300px) {
+   .login-cat img {
+     height: 215px;
+     width: 215px;
+   }
+
+}
+
+
+.signup-container{
+   display: inline-block;
+   margin-left: 80px;
+}
+
+.signup-img{
+   display: inline-block;
+   opacity: 0.7;
+   position: relative;
+   left: 150px;
+   bottom: 80px;
+   width: 375px;
+   height: 375px;
+
+}
+
+.register-button{
+   position: relative;
+   right: 20px;
+   top: 20px;
+}
+
+
+@media only screen and (max-width: 780px) {
+   .signup-container {
+     display: block;
+     text-align: center;
+     position:relative;
+     top: 250px;
+     margin-left: 0;
+   }
+   .signup-img{
+     display:block;
+     
+     position: relative;
+     bottom: 500px;
+     left:0;
+     margin: 20px auto;
+     width: 275px;
+     height: 275px;
+   }
+  .register-button{
+     position: relative;
+     right: 0;
+     top: 20px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+    .signup-img {
+      display: block;
+
+      position: relative;
+      bottom: 500px;
+      left: 0;
+      margin: 40px auto;
+      width: 215px;
+      height: 215px;
+    }
+  
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+.btno{
+  display: block;
+  margin: auto 10px;
+}
+.logout-icon{
+  display: none;
+}
+}
+

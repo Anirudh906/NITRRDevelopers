@@ -23,8 +23,8 @@ const Experience = props => {
     return (
         <Fragment>
         
-        <h2 className = "my-2" style= {{textAlign:'center', marginTop: '100px', color:'#fe8493'}}>Experience Credentials</h2>
-        <table className= "table" style ={{margin: 'auto'}}>
+        <h2 className = "my-2" style= {{textAlign:'center', marginTop: '50px', color:'#fe8493'}}>Experience Credentials</h2>
+        <table className= "table" style ={{margin: 'auto', backgroundColor:'transparent'}}>
             <thead>
                 <tr>
                     <th>

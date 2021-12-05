@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Loader from './Loader';
 import ProfileItem from './ProfileItem.js';
 import { getProfiles } from '../actions/profile';
-
+import hackercat from './images/hackercat.png';
 
 const Profiles = props => {
    useEffect(() => {
@@ -14,7 +14,7 @@ const Profiles = props => {
         <Fragment>
             { props.profile.loading ? <Loader/> : <Fragment>
          <div style={{ textAlign: "center" }}>
-          <span style={{ fontSize: "30px" }}>🐱‍💻 </span>
+          <span style={{ fontSize: "30px" }}> <img className = "hackercat" src = {hackercat}/> </span>
           <h1
             className="large text-primary"
             style={{

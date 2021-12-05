@@ -39,7 +39,7 @@ const SignUp = (props) => {
 
     return (
       <Fragment>
-        <div style={{ display: "inline-block", marginLeft: "80px" }}>
+        <div className = "signup-container" >
           <h1 className="large text-primary">Sign Up</h1>
           <p className="lead">Create Your Account</p>
           <form className="form" onSubmit={Submit}>
@@ -91,8 +91,7 @@ const SignUp = (props) => {
             </div>
             <input
               type="submit"
-              style={{ position: "relative", right: "20px", top: "20px" }}
-              className="btn btn-3"
+              className="btn btn-3 register-button"
               value="Register"
             />
           </form>
@@ -104,15 +103,8 @@ const SignUp = (props) => {
           </p>
         </div>
         <div
-          style={{
-            display: "inline-block",
-            opacity: "0.7",
-            position: "relative",
-            left: "150px",
-            bottom: "80px",
-            width: "375px",
-            height: "375px",
-          }}
+         className="signup-img"
+          
         >
           <img src={cat} alt = "cat"/>
         </div>

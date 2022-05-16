@@ -13,6 +13,7 @@ Link: https://nitrr-developers.herokuapp.com
  <!-- PROJECT LOGO -->
 <br />
 <p align="center">
+   <img src="/logo.png">
   <h3 align="center">NITRRDevelopers</h3>
   <p align="center">
     💻 NITRRDevelopers is a place for developers of NITRR. They can create post, add comments and make profiles. Made using React, Redux, Nodejs and MongoDB. 

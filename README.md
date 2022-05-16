@@ -37,7 +37,7 @@ Link: https://nitrr-developers.herokuapp.com
 
 * [React](https://reactjs.org/) - Frontend
 * [Node.js](https://nodejs.org/en/) , [JWT](https://jwt.io/).
-* [MongoDB](https://www.mongodb.com/) — data access and db automation.
+* [MongoDB](https://www.mongodb.com/).
 
 
 

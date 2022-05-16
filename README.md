@@ -58,7 +58,7 @@ npm run dev
 ## Understand your workspace
 
 ## Developer 
-| [![image](https://avatars.githubusercontent.com/u/40207836?s=400&u=964128a15a369db95b659bf8a34a16ef6ca9212f&v=4)]|
+| ![image](https://avatars.githubusercontent.com/u/40207836?s=400&u=964128a15a369db95b659bf8a34a16ef6ca9212f&v=4)|
 |:-:|
 | [![LinkedIn](https://icons.iconarchive.com/icons/danleech/simple/32/linkedin-icon.png)](https://www.linkedin.com/in/anirudha-shivarkar-9a4818193/) 
 

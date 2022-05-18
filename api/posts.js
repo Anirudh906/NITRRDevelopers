@@ -16,7 +16,6 @@ router.post(
   "/",
   [auth, [check("text", "Text is required").not().isEmpty()]],
   async (req, res) => {
-    console.log(req.files.image);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -38,12 +37,12 @@ router.post(
             Body: req.files.image.data
         }
        
-        let uploadURL = "";
+        let uploadURL = "", uploadKey="";
         try{        
           const data =  await s3.upload(params).promise();
           const { Location, Key } = data;
           uploadURL = Location;
-
+          uploadKey = Key;
         } catch(error) {
 
               return res.status(500).json('Error occured');
@@ -54,7 +53,8 @@ router.post(
         name: user.name,
         avatar: user.avatar,
         user: req.user.id,
-        image: uploadURL
+        image: uploadURL,
+        imageKey: uploadKey
       });
 
       const post = await newPost.save();
@@ -113,7 +113,14 @@ router.delete("/:id", auth, async (req, res) => {
     if (post.user.toString() !== req.user.id) {
       return res.status(401).json({ msg: "User not authorized" });
     }
-
+    const s3 = new AWS.S3({
+      accessKeyId: process.env.AWS_ID,
+      secretAccessKey: process.env.AWS_SECRET
+     });
+     s3.deleteObject({ Bucket: process.env.AWS_BUCKET_NAME, Key: post.imageKey }, (err, data) => {
+      console.error(err);
+      console.log(data);
+     });
     await post.remove();
 
     res.json({ msg: "Post removed" });

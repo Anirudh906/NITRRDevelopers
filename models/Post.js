@@ -12,6 +12,9 @@ const PostSchema = new mongoose.Schema({
     image: {
         type: String
     },
+    imageKey: {
+        type: String
+    },
     name: {
         type: String,
     },

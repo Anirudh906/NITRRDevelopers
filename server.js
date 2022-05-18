@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const fileupload = require("express-fileupload");
 require("dotenv").config();
 const app = express();
 const path = require("path");
@@ -12,7 +13,7 @@ app.use(
   })
 );
 app.use(cors());
-
+app.use(fileupload());
 app.use(express.json({ extended: false }));
 app.use(express.static("public"));
 const URL = process.env.MONGO_URL;
@@ -35,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5080;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });

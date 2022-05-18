@@ -575,7 +575,7 @@ button {
   display: inline-block;
   /* grid-template-columns: 1fr 4fr;
   grid-gap: 2rem; */
-  /* align-items: center; */
+  align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 15px;
@@ -585,7 +585,11 @@ button {
   margin-bottom: 10px;
   width: 70%;
 }
-
+.posts{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
 .post .round-img {
   width: 50px;
   float: left;
@@ -1853,4 +1857,8 @@ HTML:
   left: -10%;
   height: 30rem;
   width: 30rem;
+}
+
+.drop{
+  font-size: 1rem;
 }

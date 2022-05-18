@@ -5,6 +5,7 @@ import Loader from "./Loader";
 import PostItem from "./PostItem.js";
 import { getPosts } from "../actions/post";
 import PostForm from "./PostForm";
+import { Link } from "react-router-dom";
 const Posts = (props) => {
   useEffect(() => {
     props.getPosts();
@@ -29,7 +30,13 @@ const Posts = (props) => {
       </div>
 
       <p className="lead text-center">Welcome to the community</p>
-      {/* <PostForm/> */}
+      <div style={{marginBottom: '50px', textAlign: 'center'}}>
+      <Link
+        to="/create-post"
+        className="btno btno-3"
+      >
+        Create Post
+      </Link></div>
       <div>
         {props.post.posts.map((post) => {
           return <PostItem key={props.post._id} post={post} />;

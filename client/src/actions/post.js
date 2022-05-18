@@ -13,6 +13,8 @@ import {
   GET_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
+  CLEAR_POST,
+  ADD_POST_LOADING
 } from "./types";
 
 export const getPosts = () => async (dispatch) => {
@@ -90,13 +92,21 @@ export const deletePost = (id) => async (dispatch) => {
 };
 
 export const addPost = (formData) => async (dispatch) => {
+  dispatch({ type: ADD_POST_LOADING });
   const config = {
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "multipart/form-data",
     },
   };
 
   try {
+    // var requestOptions = {
+    //   method: "POST",
+    //   body: formData,
+    //   redirect: "follow"
+    // };
+    // let res = await fetch("/api/posts", requestOptions)
+    
     const res = await axios.post("/api/posts", formData, config);
     dispatch({
       type: ADD_POST,
@@ -117,6 +127,7 @@ export const addPost = (formData) => async (dispatch) => {
 };
 
 export const getPost = (id) => async (dispatch) => {
+  dispatch({ type: CLEAR_POST })
   try {
     const res = await axios.get(`/api/posts/${id}`);
     dispatch({

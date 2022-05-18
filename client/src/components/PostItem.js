@@ -23,7 +23,7 @@ const PostItem = (props) => {
           </div>
           <div className="post-content">
             <p className="my-1 post-text">{props.post.text}</p>
-            <img src={dummy} className="post-image" />
+            {props.post.image != "" && <img src={props.post.image} className="post-image" />}
           </div>
 
           <div className="post-controls">

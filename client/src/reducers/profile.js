@@ -43,7 +43,7 @@ export default function profile(state = initialState, action) {
         profile: null,
         repos: [],
         error: {},
-        loading: false,
+        loading: true,
       };
     case GET_REPOS:
       return {

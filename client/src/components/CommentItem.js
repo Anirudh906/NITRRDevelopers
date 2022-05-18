@@ -9,6 +9,7 @@ const CommentItem = (props) => {
       <Link to="/posts" className="btno btno-3" style={{ marginTop: "30px" }}>
         Back to Posts
       </Link>
+      { !props.post.loading &&
       <div class="posts" style={{ marginTop: "30px" }}>
         <div class="post bg-white p-1 my-1">
           <div>
@@ -25,9 +26,10 @@ const CommentItem = (props) => {
           </div>
           <div>
             <p class="my-1">{props.post.post.text}</p>
+            {!props.post.loading && props.post.post.image != "" && <img src={props.post.post.image} className="post-image" />}
           </div>
         </div>
-      </div>
+      </div>} 
     </Fragment>
   );
 };

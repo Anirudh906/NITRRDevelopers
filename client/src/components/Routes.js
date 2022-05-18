@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import CreateProfile from "./CreateProfile";
 import EditProfile from "./EditProfile";
 import AddExperience from "./AddExperience";
+import CreatePost from './CreatePost';
 import { Toaster } from "react-hot-toast";
 
 import Posts from "./Posts";
@@ -33,6 +34,7 @@ const Routes = (props) => {
         <PrivateRoute exact path="/add-experience" component={AddExperience} />
         <PrivateRoute exact path="/posts" component={Posts} />
         <PrivateRoute exact path="/post/:id" component={Post} />
+        <PrivateRoute exact path="/create-post" component={CreatePost} />
         <Route component={NotFound} />
       </Switch>
     </section>

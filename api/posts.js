@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const auth = require("../middleware/auth");
+const multer = require('multer');
+const AWS = require('aws-sdk');
 
 const Post = require("../models/Post");
 const Profile = require("../models/Profile");
@@ -14,6 +16,7 @@ router.post(
   "/",
   [auth, [check("text", "Text is required").not().isEmpty()]],
   async (req, res) => {
+    console.log(req.files.image);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -21,12 +24,37 @@ router.post(
 
     try {
       const user = await User.findById(req.user.id).select("-password");
+      
+      const s3 = new AWS.S3({
+        accessKeyId: process.env.AWS_ID,
+        secretAccessKey: process.env.AWS_SECRET
+       });
+       const reqFile = req.files.image.name.split(".");
+       const fileType = reqFile[reqFile.length - 1];
+
+        const params = {
+            Bucket: process.env.AWS_BUCKET_NAME,
+            Key: `${Date.now()}.${fileType}`,
+            Body: req.files.image.data
+        }
+       
+        let uploadURL = "";
+        try{        
+          const data =  await s3.upload(params).promise();
+          const { Location, Key } = data;
+          uploadURL = Location;
+
+        } catch(error) {
+
+              return res.status(500).json('Error occured');
+          }
 
       const newPost = new Post({
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,
         user: req.user.id,
+        image: uploadURL
       });
 
       const post = await newPost.save();

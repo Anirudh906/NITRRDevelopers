@@ -34,7 +34,6 @@
     "material-ui-dropzone": "^3.5.0",
     "md5": "^2.3.0",
     "mongoose": "^6.0.7",
-    "motivater": "^1.0.6",
     "multer": "^1.4.4",
     "nodemon": "^2.0.13",
     "quoter": "^0.1.0",
